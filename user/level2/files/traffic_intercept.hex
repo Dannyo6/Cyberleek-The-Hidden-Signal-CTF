@@ -1,0 +1,73 @@
+================================================================================
+CYBERLEEK INCIDENT ARCHIVE // EVIDENCE 02: THE HIDDEN SIGNAL
+CASE REF: CYBERLEEK-2026-GTA6  |  CAPTURE ID: NET-CAP-8080
+SUBJECT: Intercepted Developer Stream Telemetry (Hex Dump)
+================================================================================
+
+EVIDENCE DESCRIPTION:
+Raw packet stream intercepted from internal developer memory cache sync traffic
+shortly after unauthorized external data transmission alerts triggered.
+
+ANNOTATION (SECURITY FORENSICS):
+The telemetry payload is encrypted using a synchronous stream XOR cipher.
+Keystream is driven by a 32-bit Linear Congruential Generator (LCG):
+  Recurrence: X_{n+1} = (1664525 * X_n + 1013904223) mod 2^32
+  Byte Output: (X_{n+1} >> 16) & 0xFF
+The generator was seeded using the credentials recovered from the developer chat:
+  Base Seed: Seed parameter from Level 1
+  Key Mix: Key Token from Level 1 mixed into state via polynomial hash:
+           state = (state * 31 + byte) mod 2^32 for each byte in Key Token.
+
+--------------------------------------------------------------------------------
+ENCRYPTED TELEMETRY STREAM (HEX):
+--------------------------------------------------------------------------------
+61 60 B6 73 68 50 45 E7 06 30 7C D6 E8 4B DF 54
+B4 8D 14 BB 7D 73 69 12 38 1D 9E 0E 09 8A D0 E2
+C3 72 03 A6 6F 4A A9 B0 0F 99 AD 4E 5A 7B 2C 7B
+A0 60 A9 70 99 DA C5 72 87 CA 87 D1 03 4E B6 05
+F0 FE 5C 53 92 F7 CB E6 78 EA B0 1E 62 DF F7 53
+51 7A 45 DA 90 12 E3 41 9A E5 98 79 86 C4 3A FB
+92 67 BB 2F 8B E8 E1 7D 43 D4 26 11 A6 84 5F 2A
+60 39 E0 3B C0 15 AB 69 29 32 FA 95 8A E7 39 17
+7D 89 C6 2B C6 98 EC 87 2B 74 85 3D 62 64 59 14
+8D 7A 82 F8 48 D7 C5 13 FA DD 88 CC BD EA 09 F9
+BB D8 DD 9C CE 17 AC 78 2E F0 D9 C3 33 AB 30 76
+23 9B 6B EA DC B0 71 17 17 CB 38 83 0B 16 7B B6
+F6 C6 FC C4 5D 31 0E D9 5B AC C8 94 A1 87 6B C4
+70 50 10 BB 08 43 03 68 9C 34 3F 47 7A 19 E7 9B
+C8 5E 94 67 0E E8 17 EA 69 F3 FC D8 8F 08 99 DD
+C8 AD 97 CD B0 BC 8B 94 CB 0B 54 24 E4 19 15 13
+99 71 9B 4E E7 A1 20 C6 26 7C D6 09 D1 73 94 3F
+3E F4 4F 72 EF 11 44 64 B1 29 97 36 97 B6 26 07
+BE 51 41 D3 0E 21 50 5B 02 D4 3A 3C 26 4C D1 B4
+FA FE F5 3D FD 5A 9C BC 1C CE A1 1F DA B8 82 FD
+D6 B5 53 2E 33 D7 89 9A C4 5C 2E 3D E3 D3 AD 24
+66 39 58 9D 99 05 04 2C A8 F4 14 65 94 A8 95 30
+37 AC AB 28 6E B0 5A 02 03 73 42 3D 0B 21 34 36
+27 DD 3D AB F2 AF E2 8E C3 E4 F4 39 C8 FB 72 16
+5D 36 E3 98 1A E6 1E 72 5F 2D EC 63 D1 42 AE 45
+05 AE 40 31 A2 4C FC 80 50 AD EB 7C 9E 31 4C 02
+0D 93 ED 72 88 28 E6 5A E4 24 A1 8E 20 D2 08 12
+02 88 95 AD E6 53 53 7D C1 47 01 F6 2A 26 18 BE
+D5 A0 D1 80 54 D0 B9 71 77 DB C9 CC 33 68 84 63
+AC 13 7B E0 71 0A 85 69 D2 62 AD 0D EB ED B4 BD
+FF A1 41 A8 58 42 5B 0E B6 42 2E BD 1E 6F 7D EC
+13 AA 42 18 D9 EB 01 D1 74 FF 4C 0C 21 C3 BC C4
+74 D4 AA 7E D7 48 44 0C FC 96 73 DD FE 70 37 3F
+BD E3 3C 50 A6 EF 3A EC 4D 08 F8 D1 8B 7C 08 1D
+7B 54 00 E2 6B 41 79 4B D7 5F F8 95 03 82 44 9E
+C3 35 A9 48 FC BD D6 C3 BD 02 F4 BA 67 11 6E 58
+67 08 C7 46 80 76 47 E0 7D 4E B8 17 55 0C 8C C9
+D9 B8 D0 BA 5E 48 D2 52 D1 A4 05 CD 17 9B D8 3F
+8B B4 EA E5 FB DC DD 0A F6 95 10 D9 11 44 B2 AA
+62 58 29 D3 E0 8E CE 1E 33 A5 8A EE CF 75 E9 85
+E8 E8 BA CB 18 9B 0D 4A 50 68 CE 80 FD 1B CC 10
+79 FA D2 7C 39 C4 CD 61 9F B6 51 C6 B4 16 BA 24
+32 1C 9C A5 0E B3 56 43 9B 06 2F 7C 8C 1D E5 98
+31 32 1A 43 06 8D 93 19 C8 5C 85 38 D2 43 C2 0B
+DB F3 63 BA 4A 80 33 61 3A 29 C9 63 C2 61 30 28
+46 10 70 D7 BB 02 8E 6E C1
+--------------------------------------------------------------------------------
+
+STATUS: ENCRYPTED // PENDING STREAM DECRYPTION
+================================================================================

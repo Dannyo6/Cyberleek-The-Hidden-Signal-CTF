@@ -1,0 +1,9 @@
+{
+  "challenge": "CYBERLEEK Level 4 Feistel Recovery",
+  "key_token": "LEEK_STREAM_KEY_8080",
+  "iv_token": "IV_CYBERLEEK_2026",
+  "blob_hex": "012C7D8068DEE719D03FBD27B3900CB50C30C87460E98E53B01BACE32C05AE94",
+  "blob_sha256": "a107048f523a14c3dbf34516ba6bb087805c9967aaa05a165b9dc0ff83209aab",
+  "flag_sha256": "28bb16e6d320e156628c5994db415cba4ed380f5269d1e910ef622c7fd213beb",
+  "expected_flag": "CYBERLEEK{H1dd3n_4@S}"
+}

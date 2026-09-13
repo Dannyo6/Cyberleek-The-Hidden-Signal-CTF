@@ -1,0 +1,23 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment & OS files
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+.idea/
+.vscode/
+
+# DO NOT IGNORE challenge artifacts and distributions:
+!admin/evidence_bundle.zip
+!user/level3/files/cyberleek_screen.png
+!admin/level3/uploads/cyberleek_screen.png
+!*.hex
+!*.enc
